@@ -50,3 +50,11 @@ fabric.properties
 
 # Editor-based Rest Client
 .idea/httpRequests
+
+# full .idea
+.idea/
+
+# full .gradle
+.gradle/
+gradle/
+gradlew
