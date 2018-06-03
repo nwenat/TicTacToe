@@ -152,6 +152,44 @@ public class Game {
         String result = "None";
         //Student code goes here ...
 
+        if(((grid[0][0])!='-') && ((grid[0][0])==(grid[1][1])) && ((grid[1][1])==(grid[2][2]))){
+            if(grid[1][1]=='x'){
+                result = "X wins";
+            } else {
+                result = "O wins";
+            }
+        } else if(((grid[0][2])!='-') && ((grid[0][2])==(grid[1][1]))&&((grid[1][1])==(grid[2][0]))){
+            if(grid[1][1]=='x'){
+                result = "X wins";
+            } else {
+                result = "O wins";
+            }
+        } else {
+            for(int k=0; k<3; k++){
+                int l=0;
+                if(((grid[k][l])!='-') && ((grid[k][l])==(grid[k][l+1]))&&((grid[k][l+1])==(grid[k][l+2]))){
+                    if(grid[k][l]=='x'){
+                        result = "X wins";
+                    } else {
+                        result = "O wins";
+                    }
+                } else if(((grid[l][k])!='-') && ((grid[l][k])==(grid[l+1][k]))&&((grid[l+1][k])==(grid[l+2][k]))){
+                    if(grid[k][l]=='x'){
+                        result = "X wins";
+                    } else {
+                        result = "O wins";
+                    }
+                }
+            }
+        }
+
+        if(result.equals("None") && freeSpots==0){
+            result = "Tie";
+        }
+
+
+
+
         return result;
     }
 
